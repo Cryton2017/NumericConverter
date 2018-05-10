@@ -1,0 +1,27 @@
+#header{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(67, 116, 193);
+    color: white;
+}
+
+#heading{
+    text-align: center;
+}
+
+#buttonPanel{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(62, 101, 163);
+}
+
+#form{
+    position: absolute;
+    top: 15%;
+    left: 0;
+}
