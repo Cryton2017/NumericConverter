@@ -14,7 +14,7 @@
       </div>
     </div>
     <div id="form">
-    	<form action="test.jsp" method="post">
+    	<form action="processing.jsp" method="post">
     		<input id="text" type="text" name="test" />
     		<input id="submit" type="submit" name="submit" value="Submit">
     	</form>
