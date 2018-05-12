@@ -1,5 +1,6 @@
 <%@include file="doubleDigits.jsp" %>
 <%@include file="tripleDigits.jsp" %>
+<%@include file="quadDigits.jsp" %>
 
 <%
 	//Declare arrays for comparison:
@@ -99,7 +100,7 @@
 	}
 	
 	public String quadDigitWithDecimal(int length, String[] input, String[] ouput, String userInput, int decimal){
-		return "Four Digits";
+		return quadThousands(length, input, ouput, userInput, decimal);
 	}
 	
 	public String noDecimal(int length, String[] input, String[] ouput, String userInput, int decimal){
