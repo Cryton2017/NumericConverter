@@ -20,6 +20,10 @@
     background-color: rgb(62, 101, 163);
 }
 
+#buttons{
+	text-allign: center;
+}
+
 #form{
     position: absolute;
     top: 15%;

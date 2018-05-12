@@ -9,8 +9,7 @@
     </div>
     <div id="buttonPanel">
       <div id="buttons">
-        <input class="menuButtons" type="button" value="Input" />
-        <input class="menuButtons" type="button" value="Output" />
+        <input class="menuButtons" type="button" value="Refresh Page" />
       </div>
     </div>
     <div id="form">
