@@ -1,4 +1,3 @@
-<%!
 	public String doudbleTens(int length, String[] input, String[] ouput, String userInput, int decimal){
 	
 		//Variables:
@@ -167,7 +166,3 @@ public String doubleDecimals(int length, String[] input, String[] ouput, String 
 		//Retunr the complete cents value:
 		return complete;
 	}
-	
-
-
-%>
