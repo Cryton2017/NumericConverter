@@ -26,10 +26,9 @@
 					break;
 		case 3:		outputString = tripleDigitWithDecimal(paramLength, inputNumber, decimal);
 					break;
-
 		case 4:		outputString = quadDigitWithDecimal(paramLength, inputNumber, decimal);
 					break;
-		default:	outputString = "Please enter a valid number taht does not have more than 4 whole digits";
+		default:	outputString = "Please enter a valid number that does not have more than 4 whole digits";
 					break;
 	}
 	
