@@ -13,8 +13,8 @@
       </div>
     </div>
     <div id="form">
-    	<form action="processing.jsp" method="post">
-    		<input id="text" type="text" name="userInput" />
+    	<form action="intToNumConverter.jsp" method="post">
+    		<input id="text" placeholder="1.0" step="0.01" type="number" name="userInput" />
     		<input id="submit" type="submit" name="submit" value="Submit">
     	</form>
     </div>

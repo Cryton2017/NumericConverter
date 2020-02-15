@@ -1,57 +1,71 @@
 <%@include file="numberConverter.jsp" %>
 
-<%!
-
-    //Initial Arrays:
-    String[] singles = new String[]{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Zero"};
-    String[] teens = new String[]{"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-    String[] tys = new String[]{"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninty"};
-    String[] bigNums = new String[]{"Hundred", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "sextillion", 
-                                    "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion", "Duodecillion", "Tredecillion", "Quattuordecillion", 
-                                    "Quindecillion", "Sexdecillion", "Septendecillion", "Octodecillion", "Novemdecillion", "Vigintillion", "Centillion"};
+<%
 
     //Get the parameters sent by the request:
     String outputString = "";
+    String inputNumber = request.getParameter("userInput");
+
+    //Setup variables:
+    String wholeNumberStr = "";
+    String decimalNumberStr = "";
+    int wholeNumber = 0;
+    int decimalNumber = 0;
+    int wholeNumberLength = 0;
+    int decimalLength = 0;
 
     try{
-        String inputNumber = request.getParameter("userInput");
-        string[] valueSplit = inputNumber.split(".", 2); 
-    }catch(Exception e){
-        outputString = "An unknow error occured, please try again."
-    }
 
-	//Analyse the parameters:
-    int wholeNumber = valueSplit[0];
-	int decimalNumber = valueSplit[1];
-    int wholeNumberLength = wholeNumber.length();
-    int decimalLength = decimalNumber.length();
+        //Analyse the parameters:
+        String[] valueSplit = inputNumber.split("\\.", 2);
+        wholeNumberStr = valueSplit[0];
+        decimalNumberStr = valueSplit[1];
+        wholeNumber = Integer.parseInt(wholeNumberStr);
+        decimalNumber = Integer.parseInt(decimalNumberStr);
+        wholeNumberLength = String.valueOf(wholeNumber).length();
+        decimalLength = String.valueOf(decimalNumber).length();
 
-    if(decimalNumber == 2){
-        if (wholeNumberLength == 19){
-            outputString = Quintillion(wholeNumber, decimalNumber);
-        }else if (wholeNumberLength == 16){
-            outputString = Quadrillion(wholeNumber, decimalNumber);
-        }else if (wholeNumberLength == 13){
-            outputString = Trillion(wholeNumber, decimalNumber);
-        }else if (wholeNumberLength == 10){
-            outputString = Billion(wholeNumber, decimalNumber);
-        }else if (wholeNumberLength == 7){
-            outputString = Million(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 6){
-            outputString = HundredThousands(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 5){
-            outputString = TenThousands(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 4){
-            outputString = Thousands(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 3){
-            outputString = Hundreds(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 2){
-            outputString = Tens(wholeNumber, decimalNumber);
-        }else if(wholeNumberLength == 1){
-            outputString = Single(wholeNumber, decimalNumber);
+        //Check to make sure decimal leng is 2:
+        if(decimalLength == 2 || (decimalLength == 1 && decimalNumber < 10)){
+
+            //Convert integer number to string number:
+            switch(wholeNumberLength){
+                case 10:    outputString = Billions(wholeNumber, decimalNumber);
+                            break;
+                case 9:    outputString = HundredMillions(wholeNumber, decimalNumber, "");
+                            break;
+                case 8:     outputString = TenMillions(wholeNumber, decimalNumber, "");
+                            break;
+                case 7:     outputString = Millions(wholeNumber, decimalNumber, "");
+                            break;
+                case 6:     outputString = HundredThousands(wholeNumber, decimalNumber, "");
+                            break;
+                case 5:     outputString = TenThousands(wholeNumber, decimalNumber, "");
+                            break;
+                case 4:     outputString = Thousands(wholeNumber, decimalNumber, "");
+                            break;
+                case 3:     outputString = Hundreds(wholeNumber, decimalNumber, "");
+                            break;
+                case 2:     outputString = Tens(wholeNumber, decimalNumber, "");
+                            break;
+                case 1:     outputString = Single(wholeNumber, decimalNumber, "");
+                            break;
+                default:    outputString = "Please enter a value with a max size of 10 digits. (Billion)";
+                            break;
+            }
+
+        }else{
+
+            //Alert the user to an error:
+            outputString = "Please ensure that the decminal is correct to two decimal places.";
+
         }
-    }else{
-        outputString = "Please enter a number correct to two decimal places.";
+
+    }catch(Exception e){
+
+        //Alert the user to an error:
+        outputString = "Please Enter a number correct to two decimal places." + e;
+
     }
     
 %>
@@ -61,6 +75,12 @@
   	<title>Number to String Converter - Result</title>
   </head>
   <body>
-  	<p><%=outputString%></p>
+  	<p>Output: <%=outputString%></p>
+  	<p>Input: <%=inputNumber%></p>
+  	<p>Whole: <%=wholeNumberStr%></p>
+  	<p>Decimal: <%=decimalNumberStr%></p>
+      <p>Whole: <%=wholeNumberLength%></p>
+  	<p>Decimal: <%=decimalLength%></p>
+
   </body>
 </html>
