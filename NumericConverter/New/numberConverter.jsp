@@ -8,7 +8,109 @@
 
     //Calculate a number in the range of Billion:
     public String Billions(int wholeNumber, int decimalNumber){
-        return "Billions";
+        
+        //Initial Calculations:
+        int currentChar = Integer.parseInt(Character.toString(Integer.toString(wholeNumber).charAt(0)));
+        int nextNum = Integer.parseInt(Integer.toString(wholeNumber).substring(1, 10));
+        String converted = "";
+
+        //Convert the number:
+        switch(currentChar){
+            case 9:     converted = converted + singles[9] + " " + bigNums[3] + " ";
+                        break;
+            case 8:     converted = converted + singles[8] + " " + bigNums[3] + " ";
+                        break;
+            case 7:     converted = converted + singles[7] + " " + bigNums[3] + " ";
+                        break;
+            case 6:     converted = converted + singles[6] + " " + bigNums[3] + " ";
+                        break;
+            case 5:     converted = converted + singles[5] + " " + bigNums[3] + " ";
+                        break;
+            case 4:     converted = converted + singles[4] + " " + bigNums[3] + " ";
+                        break;
+            case 3:     converted = converted + singles[3] + " " + bigNums[3] + " ";
+                        break;
+            case 2:     converted = converted + singles[2] + " " + bigNums[3] + " ";
+                        break;
+            case 1:     converted = converted + singles[1] + " " + bigNums[3] + " ";
+                        break;
+            default:    converted = "An Unknown Error Occured.";
+                        break;
+        }
+
+        //If the number contains a sub digit between 100 and 999:
+        if(String.valueOf(nextNum).length() == 9){
+
+            //Calculate the tens value:
+            converted = converted + " ";
+            return HundredMillions(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 8){
+
+            //Calculate the tens value:
+            converted = converted + " ";
+            return TenMillions(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 7){
+
+            //Calculate the tens value:
+            converted = converted + " ";
+            return Millions(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 6){
+
+            //Calculate the tens value:
+            converted = converted + " ";
+            return HundredThousands(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 5){
+            
+            //Calculate the tens value:
+            converted = converted + " and ";
+            return TenThousands(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 4){
+
+            //Calculate the tens value:
+            converted = converted + " and ";
+            return Thousands(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 3){
+
+            //Calculate the tens value:
+            converted = converted + " ";
+            return Hundreds(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 2){
+
+            //Calculate the tens value:
+            converted = converted + " and ";
+            return Tens(nextNum, decimalNumber, converted);
+
+        }else if(String.valueOf(nextNum).length() == 1){
+
+            //If there is no singals value:
+            if(nextNum == 0){
+
+                //Calculate cents value:
+                converted = converted + " Dollars and ";
+                return cents(decimalNumber, converted);
+
+            }else{
+
+                //Calcualte the singles value:
+                converted = converted + " and ";
+                return Single(nextNum, decimalNumber, converted);
+
+            }
+
+        }else{
+
+            //Return and error:
+            return "Unknow Error";
+            
+        }
+
     }
 
     //Calculate a number in the range of HundredMillions:
@@ -430,13 +532,13 @@
         }else if(String.valueOf(nextNum).length() == 3){
 
             //Calculate the tens value:
-            converted = converted + " thousand ";
+            converted = converted + " Thousand ";
             return Hundreds(nextNum, decimalNumber, converted);
 
         }else if(String.valueOf(nextNum).length() == 2){
 
             //Calculate the tens value:
-            converted = converted + " thousand and ";
+            converted = converted + " Thousand and ";
             return Tens(nextNum, decimalNumber, converted);
 
         }else if(String.valueOf(nextNum).length() == 1){
@@ -445,7 +547,7 @@
             if(nextNum == 0){
 
                 //Calculate cents value:
-                converted = converted + "Thousand Dollars and ";
+                converted = converted + " Thousand Dollars and ";
                 return cents(decimalNumber, converted);
 
             }else{
@@ -522,7 +624,7 @@
                 if(nextNum == 0){
 
                     //Calculate cents value:
-                    converted = converted + "Thousand Dollars and ";
+                    converted = converted + " Thousand Dollars and ";
                     return cents(decimalNumber, converted);
 
                 }else{
@@ -591,7 +693,7 @@
                 if(nextNum == 0){
 
                     //Calculate cents value:
-                    converted = converted + "Thousand Dollars and ";
+                    converted = converted + " Thousand Dollars and ";
                     return cents(decimalNumber, converted);
 
                 }else{
@@ -666,7 +768,7 @@
             if(nextNum == 0){
 
                 //Calculate cents value:
-                converted = converted + "Dollars and ";
+                converted = converted + " Dollars and ";
                 return cents(decimalNumber, converted);
 
             }else{
