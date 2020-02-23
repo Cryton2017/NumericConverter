@@ -1,4 +1,8 @@
-<%!
+package New;
+
+public class numberConverter{
+
+    public numberConverter(){}
 
     //Initial Arrays:
     String[] singles = new String[]{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
@@ -1107,4 +1111,4 @@
 
     }
 
-%>
+}
