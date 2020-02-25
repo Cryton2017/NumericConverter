@@ -7,7 +7,7 @@ public class numberConverter{
     //Initial Arrays:
     String[] singles = new String[]{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
     String[] teens = new String[]{"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-    String[] tys = new String[]{"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninty"};
+    String[] tys = new String[]{"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
     String[] bigNums = new String[]{"Hundred", "Thousand", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion"};
 
     //Calculate a number in the range of Billion:
@@ -20,23 +20,23 @@ public class numberConverter{
 
         //Convert the number:
         switch(currentChar){
-            case 9:     converted = converted + singles[9] + " " + bigNums[3] + " ";
+            case 9:     converted = converted + singles[9] + " " + bigNums[3];
                         break;
-            case 8:     converted = converted + singles[8] + " " + bigNums[3] + " ";
+            case 8:     converted = converted + singles[8] + " " + bigNums[3];
                         break;
-            case 7:     converted = converted + singles[7] + " " + bigNums[3] + " ";
+            case 7:     converted = converted + singles[7] + " " + bigNums[3];
                         break;
-            case 6:     converted = converted + singles[6] + " " + bigNums[3] + " ";
+            case 6:     converted = converted + singles[6] + " " + bigNums[3];
                         break;
-            case 5:     converted = converted + singles[5] + " " + bigNums[3] + " ";
+            case 5:     converted = converted + singles[5] + " " + bigNums[3];
                         break;
-            case 4:     converted = converted + singles[4] + " " + bigNums[3] + " ";
+            case 4:     converted = converted + singles[4] + " " + bigNums[3];
                         break;
-            case 3:     converted = converted + singles[3] + " " + bigNums[3] + " ";
+            case 3:     converted = converted + singles[3] + " " + bigNums[3];
                         break;
-            case 2:     converted = converted + singles[2] + " " + bigNums[3] + " ";
+            case 2:     converted = converted + singles[2] + " " + bigNums[3];
                         break;
-            case 1:     converted = converted + singles[1] + " " + bigNums[3] + " ";
+            case 1:     converted = converted + singles[1] + " " + bigNums[3];
                         break;
             default:    converted = "An Unknown Error Occured.";
                         break;
@@ -93,7 +93,7 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
@@ -102,9 +102,9 @@ public class numberConverter{
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
 
@@ -126,23 +126,23 @@ public class numberConverter{
 
         //Convert the number:
         switch(currentChar){
-            case 9:     converted = converted + singles[9] + " " + bigNums[0] + " ";
+            case 9:     converted = converted + singles[9] + " " + bigNums[0];
                         break;
-            case 8:     converted = converted + singles[8] + " " + bigNums[0] + " ";
+            case 8:     converted = converted + singles[8] + " " + bigNums[0];
                         break;
-            case 7:     converted = converted + singles[7] + " " + bigNums[0] + " ";
+            case 7:     converted = converted + singles[7] + " " + bigNums[0];
                         break;
-            case 6:     converted = converted + singles[6] + " " + bigNums[0] + " ";
+            case 6:     converted = converted + singles[6] + " " + bigNums[0];
                         break;
-            case 5:     converted = converted + singles[5] + " " + bigNums[0] + " ";
+            case 5:     converted = converted + singles[5] + " " + bigNums[0];
                         break;
-            case 4:     converted = converted + singles[4] + " " + bigNums[0] + " ";
+            case 4:     converted = converted + singles[4] + " " + bigNums[0];
                         break;
-            case 3:     converted = converted + singles[3] + " " + bigNums[0] + " ";
+            case 3:     converted = converted + singles[3] + " " + bigNums[0];
                         break;
-            case 2:     converted = converted + singles[2] + " " + bigNums[0] + " ";
+            case 2:     converted = converted + singles[2] + " " + bigNums[0];
                         break;
-            case 1:     converted = converted + singles[1] + " " + bigNums[0] + " ";
+            case 1:     converted = converted + singles[1] + " " + bigNums[0];
                         break;
             default:    converted = "An Unknown Error Occured.";
                         break;
@@ -170,13 +170,13 @@ public class numberConverter{
         }else if(String.valueOf(nextNum).length() == 5){
             
             //Calculate the tens value:
-            converted = converted + " Million and ";
+            converted = converted + " Million ";
             return TenThousands(nextNum, decimalNumber, converted);
 
         }else if(String.valueOf(nextNum).length() == 4){
 
             //Calculate the tens value:
-            converted = converted + " Million and ";
+            converted = converted + " Million ";
             return Thousands(nextNum, decimalNumber, converted);
 
         }else if(String.valueOf(nextNum).length() == 3){
@@ -193,7 +193,7 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
@@ -202,9 +202,9 @@ public class numberConverter{
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " Million and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
 
@@ -232,25 +232,25 @@ public class numberConverter{
 
             //Convert the number:
             switch(secondChar){
-                case 9:     converted = converted + teens[9] + " ";
+                case 9:     converted = converted + teens[9];
                             break;
-                case 8:     converted = converted + teens[8] + " ";
+                case 8:     converted = converted + teens[8];
                             break;
-                case 7:     converted = converted + teens[7] + " ";
+                case 7:     converted = converted + teens[7];
                             break;
-                case 6:     converted = converted + teens[6] + " ";
+                case 6:     converted = converted + teens[6];
                             break;
-                case 5:     converted = converted + teens[5] + " ";
+                case 5:     converted = converted + teens[5];
                             break;
-                case 4:     converted = converted + teens[4] + " ";
+                case 4:     converted = converted + teens[4];
                             break;
-                case 3:     converted = converted + teens[3] + " ";
+                case 3:     converted = converted + teens[3];
                             break;
-                case 2:     converted = converted + teens[2] + " ";
+                case 2:     converted = converted + teens[2];
                             break;
-                case 1:     converted = converted + teens[1] + " ";
+                case 1:     converted = converted + teens[1];
                             break;
-                case 0:     converted = converted + teens[0] + " ";
+                case 0:     converted = converted + teens[0];
                             break;
                 default:    converted = "An Unknown Error Occured.";
                             break;
@@ -289,18 +289,18 @@ public class numberConverter{
 
             }else if(String.valueOf(nextNum).length() == 1){
 
-                //If there is no singals value:
+                //If there is no singles value:
                 if(nextNum == 0){
 
                     //Calculate cents value:
-                    converted = converted + "Million Dollars and ";
+                    converted = converted + " Million Dollars and ";
                     return cents(decimalNumber, converted);
 
                 }else{
 
-                    //Calcualte the singles value:
+                    //Calculate the singles value:
                     converted = converted + " Million and ";
-                    return Single(nextNum, decimalNumber, converted);
+                    return Single(wholeNumber, decimalNumber, converted);
 
                 }
 
@@ -315,23 +315,23 @@ public class numberConverter{
 
             //Convert the number:
             switch(currentChar){
-                case 9:     converted = converted + tys[7] + " ";
+                case 9:     converted = converted + tys[7];
                             break;
-                case 8:     converted = converted + tys[6] + " ";
+                case 8:     converted = converted + tys[6];
                             break;
-                case 7:     converted = converted + tys[5] + " ";
+                case 7:     converted = converted + tys[5];
                             break;
-                case 6:     converted = converted + tys[4] + " ";
+                case 6:     converted = converted + tys[4];
                             break;
-                case 5:     converted = converted + tys[3] + " ";
+                case 5:     converted = converted + tys[3];
                             break;
-                case 4:     converted = converted + tys[2] + " ";
+                case 4:     converted = converted + tys[2];
                             break;
-                case 3:     converted = converted + tys[1] + " ";
+                case 3:     converted = converted + tys[1];
                             break;
-                case 2:     converted = converted + tys[0] + " ";
+                case 2:     converted = converted + tys[0];
                             break;
-                case 1:     converted = converted + teens[0] + " ";
+                case 1:     converted = converted + teens[0];
                             break;
                 default:    converted = "An Unknown Error Occured.";
                             break;
@@ -385,9 +385,9 @@ public class numberConverter{
 
                 }else{
 
-                    //Calcualte the singles value:
+                    //Calculate the singles value:
                     converted = converted + " Million and ";
-                    return Single(nextNum, decimalNumber, converted);
+                    return Single(wholeNumber, decimalNumber, converted);
 
                 }
 
@@ -411,23 +411,23 @@ public class numberConverter{
 
         //Convert the number:
         switch(currentChar){
-            case 9:     converted = converted + singles[9] + " " + bigNums[2] + " ";
+            case 9:     converted = converted + singles[9] + " " + bigNums[2];
                         break;
-            case 8:     converted = converted + singles[8] + " " + bigNums[2] + " ";
+            case 8:     converted = converted + singles[8] + " " + bigNums[2];
                         break;
-            case 7:     converted = converted + singles[7] + " " + bigNums[2] + " ";
+            case 7:     converted = converted + singles[7] + " " + bigNums[2];
                         break;
-            case 6:     converted = converted + singles[6] + " " + bigNums[2] + " ";
+            case 6:     converted = converted + singles[6] + " " + bigNums[2];
                         break;
-            case 5:     converted = converted + singles[5] + " " + bigNums[2] + " ";
+            case 5:     converted = converted + singles[5] + " " + bigNums[2];
                         break;
-            case 4:     converted = converted + singles[4] + " " + bigNums[2] + " ";
+            case 4:     converted = converted + singles[4] + " " + bigNums[2];
                         break;
-            case 3:     converted = converted + singles[3] + " " + bigNums[2] + " ";
+            case 3:     converted = converted + singles[3] + " " + bigNums[2];
                         break;
-            case 2:     converted = converted + singles[2] + " " + bigNums[2] + " ";
+            case 2:     converted = converted + singles[2] + " " + bigNums[2];
                         break;
-            case 1:     converted = converted + singles[1] + " " + bigNums[2] + " ";
+            case 1:     converted = converted + singles[1] + " " + bigNums[2];
                         break;
             default:    converted = "An Unknown Error Occured.";
                         break;
@@ -466,7 +466,7 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
@@ -475,9 +475,9 @@ public class numberConverter{
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
 
@@ -547,7 +547,7 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
@@ -556,9 +556,9 @@ public class numberConverter{
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " Thousand and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
 
@@ -585,25 +585,25 @@ public class numberConverter{
 
             //Convert the number:
             switch(secondChar){
-                case 9:     converted = converted + teens[9] + " ";
+                case 9:     converted = converted + teens[9];
                             break;
-                case 8:     converted = converted + teens[8] + " ";
+                case 8:     converted = converted + teens[8];
                             break;
-                case 7:     converted = converted + teens[7] + " ";
+                case 7:     converted = converted + teens[7];
                             break;
-                case 6:     converted = converted + teens[6] + " ";
+                case 6:     converted = converted + teens[6];
                             break;
-                case 5:     converted = converted + teens[5] + " ";
+                case 5:     converted = converted + teens[5];
                             break;
-                case 4:     converted = converted + teens[4] + " ";
+                case 4:     converted = converted + teens[4];
                             break;
-                case 3:     converted = converted + teens[3] + " ";
+                case 3:     converted = converted + teens[3];
                             break;
-                case 2:     converted = converted + teens[2] + " ";
+                case 2:     converted = converted + teens[2];
                             break;
-                case 1:     converted = converted + teens[1] + " ";
+                case 1:     converted = converted + teens[1];
                             break;
-                case 0:     converted = converted + teens[0] + " ";
+                case 0:     converted = converted + teens[0];
                             break;
                 default:    converted = "An Unknown Error Occured.";
                             break;
@@ -624,7 +624,7 @@ public class numberConverter{
 
             }else if(String.valueOf(nextNum).length() == 1){
 
-                //If there is no singals value:
+                //If there is no singles value:
                 if(nextNum == 0){
 
                     //Calculate cents value:
@@ -633,9 +633,9 @@ public class numberConverter{
 
                 }else{
 
-                    //Calcualte the singles value:
+                    //Calculate the singles value:
                     converted = converted + " Thousand and ";
-                    return Single(nextNum, decimalNumber, converted);
+                    return Single(wholeNumber, decimalNumber, converted);
 
                 }
 
@@ -650,23 +650,23 @@ public class numberConverter{
 
             //Convert the number:
             switch(currentChar){
-                case 9:     converted = converted + tys[7] + " ";
+                case 9:     converted = converted + tys[7];
                             break;
-                case 8:     converted = converted + tys[6] + " ";
+                case 8:     converted = converted + tys[6];
                             break;
-                case 7:     converted = converted + tys[5] + " ";
+                case 7:     converted = converted + tys[5];
                             break;
-                case 6:     converted = converted + tys[4] + " ";
+                case 6:     converted = converted + tys[4];
                             break;
-                case 5:     converted = converted + tys[3] + " ";
+                case 5:     converted = converted + tys[3];
                             break;
-                case 4:     converted = converted + tys[2] + " ";
+                case 4:     converted = converted + tys[2];
                             break;
-                case 3:     converted = converted + tys[1] + " ";
+                case 3:     converted = converted + tys[1];
                             break;
-                case 2:     converted = converted + tys[0] + " ";
+                case 2:     converted = converted + tys[0];
                             break;
-                case 1:     converted = converted + teens[0] + " ";
+                case 1:     converted = converted + teens[0];
                             break;
                 default:    converted = "An Unknown Error Occured.";
                             break;
@@ -693,7 +693,7 @@ public class numberConverter{
 
             }else if(String.valueOf(nextNum).length() == 1){
 
-                //If there is no singals value:
+                //If there is no singles value:
                 if(nextNum == 0){
 
                     //Calculate cents value:
@@ -702,9 +702,9 @@ public class numberConverter{
 
                 }else{
 
-                    //Calcualte the singles value:
-                    converted = converted + " and ";
-                    return Single(nextNum, decimalNumber, converted);
+                    //Calculate the singles value:
+                    converted = converted + " Thousand and ";
+                    return Single(wholeNumber, decimalNumber, converted);
 
                 }
 
@@ -717,9 +717,6 @@ public class numberConverter{
 
         }
 
-        
-
-        
     }
 
     //Calculate a number in the range of Thousands:
@@ -731,23 +728,23 @@ public class numberConverter{
 
         //Convert the number:
         switch(currentChar){
-            case 9:     converted = converted + singles[9] + " " + bigNums[1] + " ";
+            case 9:     converted = converted + singles[9] + " " + bigNums[1];
                         break;
-            case 8:     converted = converted + singles[8] + " " + bigNums[1] + " ";
+            case 8:     converted = converted + singles[8] + " " + bigNums[1];
                         break;
-            case 7:     converted = converted + singles[7] + " " + bigNums[1] + " ";
+            case 7:     converted = converted + singles[7] + " " + bigNums[1];
                         break;
-            case 6:     converted = converted + singles[6] + " " + bigNums[1] + " ";
+            case 6:     converted = converted + singles[6] + " " + bigNums[1];
                         break;
-            case 5:     converted = converted + singles[5] + " " + bigNums[1] + " ";
+            case 5:     converted = converted + singles[5] + " " + bigNums[1];
                         break;
-            case 4:     converted = converted + singles[4] + " " + bigNums[1] + " ";
+            case 4:     converted = converted + singles[4] + " " + bigNums[1];
                         break;
-            case 3:     converted = converted + singles[3] + " " + bigNums[1] + " ";
+            case 3:     converted = converted + singles[3] + " " + bigNums[1];
                         break;
-            case 2:     converted = converted + singles[2] + " " + bigNums[1] + " ";
+            case 2:     converted = converted + singles[2] + " " + bigNums[1];
                         break;
-            case 1:     converted = converted + singles[1] + " " + bigNums[1] + " ";
+            case 1:     converted = converted + singles[1] + " " + bigNums[1];
                         break;
             default:    converted = "An Unknown Error Occured.";
                         break;
@@ -768,7 +765,7 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
@@ -777,9 +774,9 @@ public class numberConverter{
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
 
@@ -832,19 +829,18 @@ public class numberConverter{
 
         }else if(String.valueOf(nextNum).length() == 1){
 
-            //If there is no singals value:
+            //If there is no singles value:
             if(nextNum == 0){
 
                 //Calculate cents value:
-                //converted = converted.substring(0, converted.length() - 5);
                 converted = converted + " Dollars and ";
                 return cents(decimalNumber, converted);
 
             }else{
 
-                //Calcualte the singles value:
+                //Calculate the singles value:
                 converted = converted + " and ";
-                return Single(nextNum, decimalNumber, converted);
+                return Single(wholeNumber, decimalNumber, converted);
 
             }
         }else{
@@ -853,9 +849,7 @@ public class numberConverter{
             return "Unknow Error";
 
         }
-
         
-
     }
 
     //Calculate a number in the range of Tens:
@@ -924,66 +918,101 @@ public class numberConverter{
 
             if(singalChar == 0){
                 //Return the converted number:
-                converted = converted + " Dollars  and ";
+                converted = converted + " Dollars and ";
                 return cents(decimalNumber, converted);
             }else{
                 //Get the rest of the number:
-                return Single(singalChar, decimalNumber, converted);
+            	converted = converted + " ";
+                return Single(wholeNumber, decimalNumber, converted);
             }
 
         }
 
     }
 
-    //Calculate a signle digit number:
+    //Calculate a single digit number:
     public String Single(int wholeNumber, int decimalNumber, String converted){
 
-        //Check that the number is a single digit:
-        if(String.valueOf(wholeNumber).length() == 1){
-            switch(wholeNumber){
-                case 9:     converted = converted + " " + singles[9];
-                            break;
-                case 8:     converted = converted + " " + singles[8];
-                            break;
-                case 7:     converted = converted + " " + singles[7];
-                            break;
-                case 6:     converted = converted + " " + singles[6];
-                            break;
-                case 5:     converted = converted + " " + singles[5];
-                            break;
-                case 4:     converted = converted + " " + singles[4];
-                            break;
-                case 3:     converted = converted + " " + singles[3];
-                            break;
-                case 2:     converted = converted + " " + singles[2];
-                            break;
-                case 1:     converted = converted + " " + singles[1];
-                            break;
-                case 0:     converted = converted + " " + singles[0];
-                            break;
-                default:    converted = "An Unknown Error Occured.";
-                            break;
-            }
-
-            if(wholeNumber == 1){
-
-                //Calculate cents value:
-                converted = converted + " Dollar and ";
-                return cents(decimalNumber, converted);
-
-            }else{
-
-                //Calculate cents value:
-                converted = converted + " Dollars and ";
-                return cents(decimalNumber, converted);
-
-            }
-
-            
-
-        }else{
+    	//Check the length of the received parameter:
+    	if(String.valueOf(wholeNumber).length() == 1){
+    		
+    		switch(wholeNumber){
+	            case 9:     converted = converted + singles[9];
+	                        break;
+	            case 8:     converted = converted + singles[8];
+	                        break;
+	            case 7:     converted = converted + singles[7];
+	                        break;
+	            case 6:     converted = converted + singles[6];
+	                        break;
+	            case 5:     converted = converted + singles[5];
+	                        break;
+	            case 4:     converted = converted + singles[4];
+	                        break;
+	            case 3:     converted = converted + singles[3];
+	                        break;
+	            case 2:     converted = converted + singles[2];
+	                        break;
+	            case 1:     converted = converted + singles[1];
+	                        break;
+	            case 0:     converted = converted + singles[0];
+	                        break;
+	            default:    converted = "An Unknown Error Occured.";
+	                        break;
+	        }
+	
+	        if(wholeNumber == 1){
+	
+	            //Calculate cents value:
+	            converted = converted + " Dollar and ";
+	            return cents(decimalNumber, converted);
+	
+	        }else{
+	
+	            //Calculate cents value:
+	            converted = converted + " Dollars and ";
+	            return cents(decimalNumber, converted);
+	
+	        }
+    		
+    	}else if(String.valueOf(wholeNumber).length() != 1){
+    		
+    		int wholeNumLen = String.valueOf(wholeNumber).length();
+    		int singalChar = Integer.parseInt(Character.toString(Integer.toString(wholeNumber).charAt(wholeNumLen-1)));
+    		
+    		switch(singalChar){
+	            case 9:     converted = converted + singles[9];
+	                        break;
+	            case 8:     converted = converted + singles[8];
+	                        break;
+	            case 7:     converted = converted + singles[7];
+	                        break;
+	            case 6:     converted = converted + singles[6];
+	                        break;
+	            case 5:     converted = converted + singles[5];
+	                        break;
+	            case 4:     converted = converted + singles[4];
+	                        break;
+	            case 3:     converted = converted + singles[3];
+	                        break;
+	            case 2:     converted = converted + singles[2];
+	                        break;
+	            case 1:     converted = converted + singles[1];
+	                        break;
+	            case 0:     converted = converted + singles[0];
+	                        break;
+	            default:    converted = "An Unknown Error Occured.";
+	                        break;
+	        }
+	
+	        //Calculate cents value:
+	        converted = converted + " Dollars and ";
+	        return cents(decimalNumber, converted);
+    		
+    	}else{
             return "Singles: Error.";
         }
+    	
     }
 
     public String cents(int decimalNumber, String converted){
@@ -997,7 +1026,7 @@ public class numberConverter{
 
     }
 
-    //Calcualte the double digit cents value:
+    //Calculate the double digit cents value:
     public String centTens(int decimalNumber, String converted){
 
         //Initial Calculations:
@@ -1065,6 +1094,7 @@ public class numberConverter{
                 return converted + " Cents.";
             }else{
                 //Get the rest of the number:
+            	converted = converted + " ";
                 return centSingle(singalChar, converted);
             }
 
@@ -1078,25 +1108,25 @@ public class numberConverter{
         //Check that the number is a single digit:
         if(String.valueOf(decimalNumber).length() == 1){
             switch(decimalNumber){
-                case 9:     converted = converted + " " + singles[9];
+                case 9:     converted = converted + singles[9];
                             break;
-                case 8:     converted = converted + " " + singles[8];
+                case 8:     converted = converted + singles[8];
                             break;
-                case 7:     converted = converted + " " + singles[7];
+                case 7:     converted = converted + singles[7];
                             break;
-                case 6:     converted = converted + " " + singles[6];
+                case 6:     converted = converted + singles[6];
                             break;
-                case 5:     converted = converted + " " + singles[5];
+                case 5:     converted = converted + singles[5];
                             break;
-                case 4:     converted = converted + " " + singles[4];
+                case 4:     converted = converted + singles[4];
                             break;
-                case 3:     converted = converted + " " + singles[3];
+                case 3:     converted = converted + singles[3];
                             break;
-                case 2:     converted = converted + " " + singles[2];
+                case 2:     converted = converted + singles[2];
                             break;
-                case 1:     converted = converted + " " + singles[1];
+                case 1:     converted = converted + singles[1];
                             break;
-                case 0:     converted = converted + " " + singles[0];
+                case 0:     converted = converted + singles[0];
                             break;
                 default:    converted = "An Unknown Error Occured.";
                             break;
