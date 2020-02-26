@@ -1,10 +1,8 @@
 package Tests;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-//import CustomExceptions.incorrectCentsFormatException;
 import numberConverter.numberConverter;
 
 public class ncTestCases {

@@ -1,12 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="numberConverter.numberConverter" %>
-<%@ page import="CustomExceptions.NegativeNumberException" %>
-<%@ page import="CustomExceptions.incorrectCentsFormatException" %>
+<%@ page import="numberConverter.converterInit" %>
 
 <%
-
-  String input = request.getParameter("userInput");
+	
+	//Set Params:
+  	String input = request.getParameter("userInput");
+	String outputString = "";
+	String[] result = new String[2];
+	boolean err = false;
+	
+	//Get Result:
+	converterInit converter = new converterInit();
+	result = converter.initialiseConverter(input);
+	
+	//Set Values:
+	outputString = result[0];
+	err = Boolean. parseBoolean(result[1]);
 
 %>
     
